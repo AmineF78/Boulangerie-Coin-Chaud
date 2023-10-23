@@ -1,0 +1,934 @@
+/* Réinitialisation des styles et polices */
+html, body, * {
+    padding: 0;
+    margin: 0; 
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Désactiver les barres de défilement */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Lien par défaut */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Conteneur principal */
+.main-container {
+    max-width: 1400px;
+    margin: auto;
+    width: 100%;
+}
+
+/* Mise en page générale */
+.layout {
+    padding: 10px;
+}
+
+/* Barre de navigation */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 18px;
+    position: relative;
+}
+
+/* Texte défilant (marquee) */
+.marquee-text {
+    font-size: 29px;
+    font-weight: 600;
+    margin: 60px 0px;
+    color: #f02d34;
+}
+
+/* Conteneur du texte défilant */
+.marquee {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Piste du texte défilant */
+.track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 15s linear infinite;
+    width: 180%;
+}
+
+/* Mettre en pause le texte défilant au survol */
+.track:hover {
+    animation-play-state: paused;
+}
+
+/* Animation du texte défilant */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Texte en rouge avec contour orange */
+span.text-red {
+    -webkit-text-stroke: 1px #f02d34;
+    margin-left: 6px;
+}
+
+/* Logo */
+.logo {
+    color: gray;
+    font-size: 18px;
+}
+
+/* Icône de panier d'achat */
+.cart-icon {
+    font-size: 25px;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.4s ease;
+    border: none;
+    background-color: transparent;
+}
+
+/* Icône de panier d'achat au survol */
+.cart-icon:hover {
+    transform: scale(1.1, 1.1);
+}
+
+/* Quantité d'articles dans le panier */
+.cart-item-qty {
+    position: absolute;
+    right: -8px;
+    font-size: 12px;
+    color: #eee;
+    background-color: #f02d34;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Conteneur des produits */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Carte de produit */
+.product-card {
+    cursor: pointer;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+    color: #324d67;
+}
+
+/* Carte de produit au survol */
+.product-card:hover {
+    transform: scale(1.1, 1.1);
+}
+
+/* Image du produit */
+.product-image {
+    border-radius: 15px;
+    background-color: #ebebeb;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+}
+
+/* Nom du produit */
+.product-name {
+    font-weight: 500;
+}
+
+/* Prix du produit */
+.product-price {
+    font-weight: 800;
+    margin-top: 6px;
+    color: black;
+}
+
+/* Conteneur de la bannière héroïque */
+.hero-banner-container {
+    padding: 100px 40px;
+    background-color: #dcdcdc;
+    border-radius: 15px;
+    position: relative;
+    height: 500px;
+    line-height: 0.9;
+    width: 100%;
+}
+
+/* Texte "Beats Solo" dans la bannière héroïque */
+.hero-banner-container .beats-solo {
+    font-size: 20px;
+}
+
+/* Bouton de la bannière héroïque */
+.hero-banner-container button {
+    border-radius: 15px;
+    padding: 10px 16px;
+    background-color: #f02d34;
+    color: white;
+    border: none;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 10000 !important;
+}
+
+/* Titre de la bannière héroïque */
+.hero-banner-container h3 {
+    font-size: 4rem;
+    margin-top: 4px;
+}
+
+/* Titre principal de la bannière héroïque */
+.hero-banner-container h1 {
+    color: white;
+    font-size: 10em;
+    margin-left: -20px;
+    text-transform: uppercase;
+}
+
+/* Image de la bannière héroïque */
+.hero-banner-image {
+    position: absolute;
+    top: 0%;
+    right: 20%;
+    width: 450px;
+    height: 450px;
+}
+
+/* Description de la bannière héroïque */
+.desc {
+    position: absolute;
+    right: 10%;
+    bottom: 5%;
+    width: 300px;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    color: #324d67;
+}
+
+/* Paragraphe de la description */
+.desc p {
+    color: #5f5f5f;
+    font-weight: 100;
+    text-align: end;
+}
+
+/* Titre de la description */
+.desc h5 {
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    align-self: flex-end;
+}
+
+/* Titre "Nos produits" */
+.products-heading {
+    text-align: center;
+    margin: 40px 0px;
+    color: #324d67;
+}
+
+/* Sous-titre "Nos produits" */
+.products-heading h2 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+/* Texte de description "Nos produits" */
+.products-heading p {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+/* Conteneur de la bannière du pied de page */
+.footer-banner-container {
+    padding: 100px 40px;
+    background-color: #f02d34;
+    border-radius: 15px;
+    position: relative;
+    height: 400px;
+    line-height: 1;
+    color: white;
+    width: 100%;
+    margin-top: 120px;
+}
+
+/* Description de la bannière du pied de page */
+.banner-desc {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Bouton de la bannière du pied de page */
+.banner-desc button {
+    border-radius: 15px;
+    padding: 10px 16px;
+    background-color: white;
+    color: red;
+    border: none;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Texte à gauche de la bannière du pied de page */
+.banner-desc .left h3 {
+    font-weight: 900;
+    font-size: 80px;
+    margin-left: 25px;
+}
+
+/* Paragraphe à gauche de la bannière du pied de page */
+.banner-desc .left p {
+    margin: 18px;
+}
+
+/* Image à gauche de la bannière du pied de page */
+.footer-banner-image {
+    position: absolute;
+    left: 25%;
+    top: 6%;
+}
+
+/* Texte à droite de la bannière du pied de page */
+.banner-desc .right {
+    line-height: 1.4;
+}
+
+/* Titre à droite de la bannière du pied de page */
+.banner-desc .right h3 {
+    font-weight: 800;
+    font-size: 60px;
+}
+
+/* Paragraphe à droite de la bannière du pied de page */
+.banner-desc .right p {
+    font-size: 18px;
+}
+
+/* Description de la société à droite de la bannière du pied de page */
+.banner-desc .right .company-desc {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* Conteneur du panier d'achat */
+.cart-wrapper {
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    transition: all 1s ease-in-out;
+}
+
+/* Conteneur du panier */
+.cart-container {
+    height: 100vh;
+    width: 600px;
+    background-color: white;
+    float: right;
+    padding: 40px 10px;
+    position: relative;
+}
+
+/* Conteneur du pied de page */
+.footer-container {
+    color: #324d67;
+    text-align: center;
+    margin-top: 20px;
+    padding: 30px 10px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Icônes de médias sociaux du pied de page */
+.footer-container .icons {
+    font-size: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Titre du panier d'achat */
+.cart-heading {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    gap: 2px;
+    margin-left: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Texte du panier d'achat */
+.cart-heading .heading {
+    margin-left: 10px;
+}
+
+/* Nombre d'articles dans le panier */
+.cart-num-items {
+    margin-left: 10px;
+    color: #f02d34;
+}
+
+/* Message pour un panier vide */
+.empty-cart {
+    margin: 40px;
+    text-align: center;
+}
+
+/* Titre pour un panier vide */
+.empty-cart h3 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* Icône pour annuler */
+.cancel {
+    cursor: pointer;
+}
+
+/* Conteneur des produits du panier */
+.product-container {
+    margin-top: 15px;
+    overflow: auto;
+    max-height: 70vh;
+    padding: 20px 10px;
+}
+
+/* Contenu de produit */
+.product {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Image du produit dans le panier */
+.product .cart-product-image {
+    width: 180px;
+    height: 150px;
+    border-radius: 15px;
+    background-color: #ebebeb;
+}
+
+/* Description du produit */
+.item-desc .flex {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    color: #324d67;
+}
+
+/* Partie supérieure de la description */
+.item-desc .top {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Partie inférieure de la description */
+.item-desc .bottom {
+    margin-top: 60px;
+}
+
+/* Titre dans la description */
+.flex h5 {
+    font-size: 24px;
+}
+
+/* Titre dans la description */
+.flex h4 {
+    font-size: 20px;
+}
+
+/* Conteneur du total */
+.total {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Titre "Total" */
+.total h3 {
+    font-size: 22px;
+}
+
+/* Bouton pour supprimer un article du panier */
+.remove-item {
+    font-size: 24px;
+    color: #f02d34;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+/* Conteneur du panier au bas de la page */
+.cart-bottom {
+    position: absolute;
+    bottom: 12px;
+    right: 5px;
+    width: 100%;
+    padding: 30px 65px;
+}
+
+/* Conteneur des boutons */
+.btn-container {
+    width: 400px;
+    margin: auto;
+}
+
+/* Bouton général */
+.btn {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 12px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-top: 40px;
+    text-transform: uppercase;
+    background-color: #f02d34;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+}
+
+/* Bouton général au survol */
+.btn:hover {
+    transform: scale(1.1, 1.1);
+}
+
+/* Conteneur du détail du produit */
+.product-detail-container {
+    display: flex;
+    gap: 40px;
+    margin: 40px;
+    margin-top: 60px;
+    color: #324d67;
+}
+
+/* Image du détail du produit */
+.product-detail-image {
+    border-radius: 15px;
+    background-color: #ebebeb;
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+/* Image du détail du produit au survol */
+.product-detail-image:hover {
+    background-color: #f02d34;
+}
+
+/* Conteneur des petites images */
+.small-images-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Petite image */
+.small-image {
+    border-radius: 8px;
+    background-color: #ebebeb;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+/* Petite image sélectionnée */
+.selected-image {
+    background-color: #f02d34;
+}
+
+/* Avis sur le produit */
+.reviews {
+    color: #f02d34;
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+/* Titre "Détails du produit" */
+.product-detail-desc h4 {
+    margin-top: 10px;
+}
+
+/* Paragraphe "Détails du produit" */
+.product-detail-desc p {
+    margin-top: 10px;
+}
+
+/* Paragraphe "Avis sur le produit" */
+.reviews p {
+    color: #324d67;
+    margin-top: 0px;
+}
+
+/* Prix du produit dans le détail */
+.product-detail-desc .price {
+    font-weight: 700;
+    font-size: 26px;
+    margin-top: 30px;
+    color: #f02d34;
+}
+
+/* Ancien prix du produit */
+.price .old-price, .product-price .old-price, .price .old-price {
+    color: gray;
+    text-decoration: line-through;
+}
+
+/* Conteneur de la quantité */
+.product-detail-desc .quantity {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+/* Conteneur des boutons */
+.product-detail-desc .buttons {
+    display: flex;
+    gap: 30px;
+}
+
+/* Bouton "Ajouter au panier" */
+.buttons .add-to-cart {
+    padding: 10px 20px;
+    border: 1px solid #f02d34;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: white;
+    color: #f02d34;
+    cursor: pointer;
+    width: 200px;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+}
+
+/* Bouton "Ajouter au panier" au survol */
+.buttons .add-to-cart:hover {
+    transform: scale(1.1, 1.1);
+}
+
+/* Bouton "Acheter maintenant" */
+.buttons .buy-now {
+    width: 200px;
+    padding: 10px 20px;
+    background-color: #f02d34;
+    color: white;
+    border: none;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+}
+
+/* Bouton "Acheter maintenant" au survol */
+.buttons .buy-now:hover {
+    transform: scale(1.1, 1.1);
+}
+
+/* Conteneur de la quantité */
+.quantity-desc {
+    border: 1px solid gray;
+    padding: 6px;
+}
+
+/* Texte de la quantité */
+.quantity-desc span {
+    font-size: 16px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+/* Bouton de réduction de la quantité */
+.quantity-desc .minus {
+    border-right: 1px solid gray;
+    color: #f02d34;
+}
+
+/* Nombre de produits dans la quantité */
+.quantity-desc .num {
+    border-right: 1px solid gray;
+    font-size: 20px;
+}
+
+/* Bouton d'augmentation de la quantité */
+.quantity-desc .plus {
+    color: rgb(49, 168, 49);
+}
+
+/* Conteneur des produits recommandés */
+.maylike-products-wrapper {
+    margin-top: 120px;
+}
+
+/* Titre des produits recommandés */
+.maylike-products-wrapper h2 {
+    text-align: center;
+    margin: 50px;
+    color: #324d67;
+    font-size: 28px;
+}
+
+/* Conteneur des produits recommandés */
+.maylike-products {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Produit recommandé */
+.maylike-product {
+    width: 30%;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+/* Produit recommandé au survol */
+.maylike-product:hover {
+    background-color: #f02d34;
+    color: white;
+}
+
+/* Icône d'étoile pour les produits recommandés */
+.star-icon {
+    font-size: 20px;
+    color: #f02d34;
+}
+
+/* Légende de l'étoile pour les produits recommandés */
+.star-icon .rating {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* Nom du produit recommandé */
+.maylike-product .product-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Prix du produit recommandé */
+.maylike-product .product-price {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Texte de l'avis du produit */
+.maylike-product .review {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* Conteneur des onglets */
+.tabs-container {
+    margin: 20px;
+    margin-top: 60px;
+}
+
+/* Onglets de navigation */
+.tabs-container .tab {
+    display: flex;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 12px;
+    margin-right: 10px;
+    border-radius: 15px;
+    font-weight: 500;
+    transition: .3s ease-in-out;
+}
+
+/* Onglet de navigation actif */
+.tabs-container .tab.active {
+    background-color: #f02d34;
+    color: white;
+}
+
+/* Conteneur des avis */
+.reviews-container {
+    margin-top: 20px;
+}
+
+/* Titre "Avis des clients" */
+.reviews-container h3 {
+    margin: 40px;
+    color: #324d67;
+    font-size: 28px;
+}
+
+/* Conteneur d'avis individuel */
+.single-review {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Image de profil dans l'avis */
+.single-review .profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* Nom de l'avis */
+.single-review .reviewer {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Évaluation de l'avis */
+.single-review .rating {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* Texte de l'avis */
+.single-review .review-text {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Pagination des avis */
+.pagination {
+    margin: 40px;
+}
+
+/* Pages de la pagination */
+.pagination .page {
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+/* Page de la pagination actuelle */
+.pagination .page.active {
+    background-color: #f02d34;
+    color: white;
+}
+
+/* Barre de recherche */
+.search-bar {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* Champ de recherche */
+.search-bar .search-input {
+    width: 70%;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Bouton de recherche */
+.search-bar .search-button {
+    border: none;
+    background-color: #f02d34;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Conteneur des résultats de recherche */
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Conteneur de l'élément de recherche */
+.search-item {
+    width: 300px;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+/* Élément de recherche au survol */
+.search-item:hover {
+    background-color: #f02d34;
+    color: white;
+}
+
+/* Message d'erreur de recherche */
+.search-error {
+    margin: 40px;
+    color: #f02d34;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.horaires-container {
+    text-align: center;
+    font-family: Arial, sans-serif; /* Ajoutez votre police de caractères personnalisée */
+}
+
+.horaires-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+.horaires-list li {
+    margin: 10px;
+    font-family: Arial, sans-serif; /* Ajoutez votre police de caractères personnalisée */
+}
